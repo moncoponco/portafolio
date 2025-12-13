@@ -1,0 +1,183 @@
+@font-face {
+  font-family: MyFont;
+  src: url("font/Graphik-Regular.otf") format('truetype');
+}
+
+html {
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--background-color, #ffffff); 
+  margin: 0; 
+}
+
+
+/*style definition*/
+:root {
+  --primary-color: #000000;
+  --hover-color: rgb(113, 113, 113);
+  --accent-color: #0d19ff;
+  --text-color: #000000;
+  --background-color: #ffffff;
+  --line-color: rgb(0, 0, 0);
+}
+
+/************* Layout Container (MAIN) *************/
+
+main {
+  display: flex;
+  min-height: 100vh; 
+  max-width: 100%;
+}
+
+/************* Left Container *************/
+
+.left-side {
+  display: flex;
+  min-width: 220px;
+  width: 30%;
+  flex-shrink: 0;
+  flex-direction: column;
+  border-right: solid 2px var(--primary-color);
+  font-weight: 900;
+  color: var(--primary-color); 
+  padding: 0 24px 0 24px;
+}
+
+.button-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-button {
+  font-family: 'MyFont';
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 20px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid var(--line-color);
+  transition: color 0.1s;
+}
+.time {
+  font-family: 'MyFont';
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 20px;
+  padding-bottom: 2px;
+  font-style: italic;
+  margin: 0;
+  margin-top: 26px;
+border-bottom: 2px dashed var(--line-color);}
+
+.home-button#last {
+  border-bottom: none; 
+}
+
+.home-button#bottom {
+  margin-top: 26px;
+  border-bottom: none; 
+}
+#current {
+border-bottom: none;}
+
+#past {
+  margin-top: 24px;
+}
+.home-button:hover {
+  color: var(--hover-color);
+}
+
+
+
+/************* Right Container *************/
+
+.right-side {
+  flex-grow: 1; 
+  overflow-y: auto; 
+  padding: 0px 0 0px 24px;
+}
+
+/* Typography Styles */
+.body-text {
+  font-family: 'MyFont';
+  font-size: 18px;
+  letter-spacing: -0.25px;
+}
+
+.project-title {
+  font-family: 'MyFont';
+  font-size: 28px;
+  letter-spacing: -0.25px;
+    margin-top: 24px;
+}
+
+.project-h3 {
+  font-family: 'MyFont';
+  font-weight: bolder;
+  font-size: 20px;
+  letter-spacing: -0.25px;
+  margin-top: 24px;
+  border-bottom: var(--line-color) solid 2px;
+  margin-right: 18px;
+}
+
+.intro-text {
+  font-family: 'MyFont';
+  font-size: 28px;
+  letter-spacing: -0.25px;
+  margin-top: 24px;
+}
+
+.tag {
+  font-family: 'MyFont';
+  font-size: 14px;
+  letter-spacing: -0.15px;
+  font-weight: bolder;
+  padding: 4px 8px 4px 8px;
+  border-radius: 22px;
+  width: fit-content;
+  flex-basis: 10px;
+  margin: 0;
+  background-color: black;
+  color: white;
+    height: 25px;
+
+}
+
+
+.tag#title {
+  background-color: transparent;
+  color: black;
+  padding: 0;
+  font-size: 16px;
+      height: 25px;
+
+}
+#tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;  
+  row-gap: 8px;
+  margin-bottom: 20px;}
+
+
+/************* Hiding and Showing *************/
+
+
+.page-content {
+    display: none;
+}
+.page-content:target {
+    display: block;
+}
+.page-content:not(:target) {
+    display: none;
+}
